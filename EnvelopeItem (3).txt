@@ -1,0 +1,55 @@
+package com.example.luckymoneyui;
+
+public class EnvelopeItem {
+    public boolean opened;
+    public int cents;
+    public boolean revealed;  // New field
+
+    // Original constructor (for backward compatibility)
+    public EnvelopeItem(boolean o, int c) {
+        this.opened = o;
+        this.cents = c;
+        this.revealed = false; // Default to not revealed
+    }
+
+    // New constructor with revealed parameter
+    public EnvelopeItem(boolean o, int c, boolean r) {
+        this.opened = o;
+        this.cents = c;
+        this.revealed = r;
+    }
+
+    // Getter for opened status
+    public boolean isOpened() {
+        return opened;
+    }
+
+    // Getter for amount
+    public int getCents() {
+        return cents;
+    }
+
+    // Getter for revealed status
+    public boolean isRevealed() {
+        return revealed;
+    }
+
+    // Setter for revealed status (optional, if needed)
+    public void setRevealed(boolean revealed) {
+        this.revealed = revealed;
+    }
+
+    // Setter for opened status (optional, if needed)
+    public void setOpened(boolean opened) {
+        this.opened = opened;
+    }
+
+    @Override
+    public String toString() {
+        return "EnvelopeItem{" +
+                "opened=" + opened +
+                ", cents=" + cents +
+                ", revealed=" + revealed +
+                '}';
+    }
+}
